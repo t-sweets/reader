@@ -1,0 +1,10 @@
+version: '3'
+services:
+  reader:
+    build: .
+    environment:
+     - READER_ENV=config.TestingConfig
+    ports:
+     - "8000:8000"
+    volumes:
+     - .:/app
