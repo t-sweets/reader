@@ -1,4 +1,5 @@
 from flask_restful import abort, Resource, reqparse
+from flask import current_app
 
 parser = reqparse.RequestParser()
 parser.add_argument('line_1', type=str, required=True)
@@ -14,6 +15,8 @@ class Message(Resource):
             from pilibs.sc1602 import SC1602
             lcd = SC1602()
         except Exception:
+            if current_app.config['TESTING']:
+                return args, 201
             return abort(500, message="Lcd Module Error")
 
         lcd.string(args['line_1'], 1)

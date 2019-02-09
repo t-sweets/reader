@@ -5,8 +5,6 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     DEBUG = False
     TESTING = False
-    CSRF_ENABLED = True
-    SECRET_KEY = 'SECURITY_KEY'
 
 
 class ProductionConfig(Config):
@@ -14,9 +12,9 @@ class ProductionConfig(Config):
 
 
 class DevelopmentConfig(Config):
-    DEVELOPMENT = True
     DEBUG = True
 
 
 class TestingConfig(Config):
+    DEBUG = True
     TESTING = True
