@@ -10,7 +10,7 @@ app = Flask(__name__)
 api = Api(app)
 app.config.from_object(os.environ.get("READER_ENV"))
 
-api.add_resource(FeliCa, '/api/v1/nfc')
+api.add_resource(FeliCa, '/api/v1/card')
 api.add_resource(Message, '/api/v1/message')
 api.add_resource(Led, '/api/v1/led')
 
