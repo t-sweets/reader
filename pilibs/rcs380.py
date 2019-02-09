@@ -3,10 +3,7 @@ import binascii
 
 
 def read(express=False):
-    try:
-        clf = nfc.ContactlessFrontend('usb:054c:06c3')
-    except IOError:
-        raise Exception("FeliCa device error")
+    clf = nfc.ContactlessFrontend('usb:054c:06c3')
 
     target_req = nfc.clf.RemoteTarget("212F")
 
