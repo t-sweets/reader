@@ -1,0 +1,15 @@
+aniso8601==4.1.0
+Click==7.0
+Flask==1.0.2
+Flask-RESTful==0.3.7
+itsdangerous==1.1.0
+Jinja2==2.10
+libusb1==1.7
+MarkupSafe==1.1.0
+ndeflib==0.3.2
+nfcpy==0.13.5
+pyDes==2.0.1
+pyserial==3.4
+pytz==2018.9
+six==1.12.0
+Werkzeug==0.14.1
