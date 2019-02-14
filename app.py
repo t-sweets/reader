@@ -1,12 +1,14 @@
 import os
 from flask import Flask
 from flask_restful import Api
+from flask_cors import CORS
 
 from api.felica import FeliCa
 from api.message import Message
 from api.led import Led
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 app.config.from_object(os.environ.get("READER_ENV"))
 
