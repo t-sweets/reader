@@ -15,7 +15,7 @@ def read(express=False):
     if target_res is not None:
         tag = Type3Tag(clf, target_res)
         tag.sys = 3
-        idm = binascii.hexlify(tag.idm)
+        idm = binascii.hexlify(tag.idm).upper()
         clf.close()
         return str(idm)
     clf.close()
