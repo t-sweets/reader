@@ -15,9 +15,7 @@ class FeliCa(Resource):
             @functools.wraps(func)
             def wrapper(*args,**kwargs):
                 q.put(time.time())
-                print("/// [start] critial zone")
                 result = func(*args,**kwargs)
-                print("/// [end] critial zone")
                 q.get()
                 q.task_done()
                 return result
@@ -28,7 +26,6 @@ class FeliCa(Resource):
     @multiple_control(singleQueue)
     def get(self):
         try:
-            time.sleep(2)
             from pilibs import rcs380
             result = rcs380.scan()
         except Exception:
