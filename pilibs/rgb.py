@@ -2,9 +2,9 @@ import RPi.GPIO as GPIO
 
 
 class RGB(object):
-    RED = 25
-    GREEN = 24
-    BLUE = 23
+    RED = 19
+    GREEN = 26
+    BLUE = 13
 
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
