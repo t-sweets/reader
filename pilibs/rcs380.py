@@ -17,7 +17,7 @@ def read(express=False):
         tag.sys = 3
         idm = binascii.hexlify(tag.idm)
         clf.close()
-        return str(tag)
+        return str(idm)
     clf.close()
     return None
 
