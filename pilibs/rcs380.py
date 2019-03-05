@@ -13,8 +13,10 @@ def read(express=False):
 
     if target_res is not None:
         idm = binascii.hexlify(target_res.sensf_res)
+        tag = nfc.tag.tt3.Type3Tag(clf, target_res)
+        tag.sys = 3
         clf.close()
-        return str(idm)
+        return str(tag)
     clf.close()
     return None
 
