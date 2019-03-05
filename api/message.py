@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask_restful import abort, Resource, reqparse
 from flask import current_app
 

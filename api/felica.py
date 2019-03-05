@@ -1,11 +1,12 @@
 from flask_restful import abort, Resource
 from flask import current_app
-
+import time
 
 class FeliCa(Resource):
 
     def get(self):
         try:
+            time.sleep(2)
             from pilibs import rcs380
             result = rcs380.scan()
         except Exception:
