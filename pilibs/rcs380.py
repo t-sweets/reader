@@ -1,5 +1,6 @@
 import nfc
 import binascii
+from nfc.tag.tt3 import Type3Tag
 
 
 def read(express=False):
@@ -12,9 +13,9 @@ def read(express=False):
     target_res = clf.sense(target_req, iterations=10, interval=0.01)
 
     if target_res is not None:
-        idm = binascii.hexlify(target_res.sensf_res)
-        tag = nfc.tag.tt3.Type3Tag(clf, target_res)
+        tag = Type3Tag(clf, target_res)
         tag.sys = 3
+        idm = binascii.hexlify(tag.idm)
         clf.close()
         return str(tag)
     clf.close()
