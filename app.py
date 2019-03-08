@@ -26,7 +26,5 @@ api.add_resource(FeliCa, '/api/v1/card')
 api.add_resource(Message, '/api/v1/message')
 api.add_resource(Led, '/api/v1/led')
 
-initialize()
-
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8000)
