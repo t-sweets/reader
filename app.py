@@ -7,14 +7,14 @@ from api.felica import FeliCa
 from api.message import Message
 from api.led import Led
 
-
-def initialize():
-    from pilibs.sc1602 import SC1602
-    import socket
-    lcd = SC1602()
-    lcd.string("Reader is Ready", 1)
-    lcd.string(socket.gethostbyname(socket.gethostname()), 2)
-    lcd.cleanup()
+#
+# def initialize():
+#     from pilibs.sc1602 import SC1602
+#     import socket
+#     lcd = SC1602()
+#     lcd.string("Reader is Ready", 1)
+#     lcd.string(socket.gethostbyname(socket.gethostname()), 2)
+#     lcd.cleanup()
 
 
 app = Flask(__name__)
