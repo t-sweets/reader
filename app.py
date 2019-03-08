@@ -10,10 +10,10 @@ from api.led import Led
 
 def initialize():
     from pilibs.sc1602 import SC1602
-    import socket
+    import netifaces
     lcd = SC1602()
     lcd.string("Reader is Ready", 1)
-    lcd.string(socket.gethostbyname(socket.gethostname()), 2)
+    lcd.string(str(netifaces.ifaddresses('wlan0')[netifaces.AF_INET][0]['addr']), 2)
     lcd.cleanup()
 
 
